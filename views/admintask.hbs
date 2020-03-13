@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tasks Page</title>
+        <link rel="stylesheet" type="text/css" href="index.css">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Create Task</h1>
+     <form action="/tasks/post" method="POST">
+        <label>Executor</label>
+        <input name="name" /><br><br>
+        <label>Email</label>
+        <input name="test">
+        <label>Task</label>
+        <input name="task" /><br><br>
+        <input type="submit" value="Send" />
+     </form>
+     <h1>Tasks list:</h1>
+     <table>
+         <tr><th>Task</th><th>Executor</th><th>Email</th></tr>
+         {{#each tasks}}
+            <tr><td>{{this.task}}</td><td>{{this.executorName}}</td><td>{{this.executorEmail}}</td></tr>
+         {{/each}}
+     </table>
+     
+     <a href="/tasks">LogOut</a>
+     
+
+</body>
+<html>
